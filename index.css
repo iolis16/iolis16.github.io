@@ -10,7 +10,7 @@ body {
 
 h1 {
     font-family: 'Figtree', serif;
-    font-size: 2.5em;
+    font-size: 5em;
     color: #838db1;
 }
 
@@ -57,3 +57,50 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+#typed-text::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #263a69;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.bubble-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px; 
+  background-color: rgba(191, 196, 224, 0.559);
+  border-radius: 50%; 
+  animation: floatBubbles 10s ease-in infinite;
+}
+
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh); 
+    opacity: 0; 
+  }
+}
+
+
+
+
+
+
+
