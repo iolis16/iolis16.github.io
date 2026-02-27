@@ -3,35 +3,572 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="blue-heart-svgrepo-com.svg" />
-    <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ioli Shrivastava</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
   </head>
-  
-  <body>  
+
+  <body>
     <div class="bubble-background"></div>
-    <div>
+
+    <!-- ── NAV ── -->
+    <nav class="site-nav" aria-label="Section navigation">
+      <div class="nav-pill">
+        <a class="nav-tab active" data-section="hero" href="#hero">
+          <span class="nav-emoji">👋</span><span class="nav-label">Home</span>
+        </a>
+        <a class="nav-tab" data-section="experience" href="#experience">
+          <span class="nav-emoji">✨</span><span class="nav-label">Experience</span>
+        </a>
+        <a class="nav-tab" data-section="projects" href="#projects">
+          <span class="nav-emoji">🔬</span><span class="nav-label">Projects</span>
+        </a>
+        <a class="nav-tab" data-section="clubs" href="#clubs">
+          <span class="nav-emoji">💚</span><span class="nav-label">Clubs</span>
+        </a>
+        <a class="nav-tab" data-section="hobbies" href="#hobbies">
+          <span class="nav-emoji">🍵</span><span class="nav-label">Hobbies</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
       <h1 id="typed-text"></h1>
-      <p>🎓 I'm a student at the University of Washington, majoring in Computer Science with a minor in Business Administration. </p>
-      <p>💻 I am experienced in web and app development, but love learning about everything! </p>
-      <a href="mailto:iolis@cs.washington.edu">
-        <p>📬 Email: iolis@cs.washington.edu </p>
-      </a>
-      <br></br>
-      <p2>Languages: Python, Java, JavaScript, HTML, CSS, TypeScript</p2>
-      <p2>Technologies & Frameworks: Figma, GitHub, Firebase, Microsoft Office</p2>
+      <p>🎓 Student at the University of Washington, majoring in Computer Science with a minor in Business Administration.</p>
+      <p>💻 Experienced in web & app development — always excited to learn something new!</p>
+      <a href="mailto:iolis@cs.washington.edu"><p>📬 iolis@cs.washington.edu</p></a>
+      <div class="skills-block">
+        <span>Languages: Python, Java, JavaScript, HTML, CSS, TypeScript, SQL, C</span>
+        <span>Technologies: Figma, GitHub, AWS, Firebase, Node.js, NestJS, Agile</span>
+      </div>
+      <div class="btn-row">
+        <a href="Ioli_Shrivastava_Resume.pdf" download="Ioli_Shrivastava_Resume.pdf">
+          <button type="button">Download my Resume</button>
+        </a>
+        <a href="https://www.linkedin.com/in/ioli-shrivastava">
+          <button type="button">Connect on LinkedIn</button>
+        </a>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span>explore below</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         EXPERIENCE
+    ══════════════════════════════════════════ -->
+    <section id="experience">
+      <div class="section-wrap">
+        <h2 class="section-title">Where I've worked ✨</h2>
+        <div class="card-grid">
+
+          <!-- Oracle -->
+          <div class="exp-card" data-card="oracle">
+            <!-- swap placeholder for: <img class="card-img" src="photos/oracle.jpg" alt="Oracle"> -->
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Oracle</div>
+              <div class="card-role">Software Engineering Intern</div>
+              <div class="card-date">June 2025 – September 2025</div>
+              <ul class="card-bullets">
+                <li>Automated weekly snapshot jobs using SQL & PL/SQL</li>
+                <li>Built interactive dashboards in Oracle Analytics Cloud</li>
+              </ul>
+              <div class="card-chips">
+                <span class="card-chip">SQL</span><span class="card-chip">PL/SQL</span><span class="card-chip">Analytics</span>
+              </div>
+              <span class="card-tag">Full-time</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- Venu AI -->
+          <div class="exp-card" data-card="venu">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Venu AI <span style="font-weight:500;font-size:0.8em;color:var(--slate)">(YC W21)</span></div>
+              <div class="card-role">Software Engineering Intern</div>
+              <div class="card-date">January 2025 – June 2025</div>
+              <ul class="card-bullets">
+                <li>Built automation for email campaigns & LinkedIn outreach</li>
+                <li>Streamlined lead-gen workflows from user feedback</li>
+              </ul>
+              <div class="card-chips">
+                <span class="card-chip">Automation</span><span class="card-chip">Full-Stack</span><span class="card-chip">Agile</span>
+              </div>
+              <span class="card-tag">Startup · YC</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- The Pink Stairs -->
+          <div class="exp-card" data-card="pinkstairs">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">The Pink Stairs</div>
+              <div class="card-role">Software Engineering Intern</div>
+              <div class="card-date">September 2024 – December 2024</div>
+              <ul class="card-bullets">
+                <li>Redesigned website backend with Node.js, NestJS & SQL</li>
+                <li>Improved performance and accessibility</li>
+              </ul>
+              <div class="card-chips">
+                <span class="card-chip">Node.js</span><span class="card-chip">NestJS</span><span class="card-chip">SQL</span>
+              </div>
+              <span class="card-tag">Nonprofit</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- T-Mobile -->
+          <div class="exp-card" data-card="tmobile">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">T-Mobile</div>
+              <div class="card-role">Accelerator Intern</div>
+              <div class="card-date">June – September 2024</div>
+              <ul class="card-bullets">
+                <li>Automated scouting in Airtable, cutting recruiter time by 30%</li>
+                <li>Built knowledge base for VC & startup collaboration</li>
+              </ul>
+              <div class="card-chips">
+                <span class="card-chip">Airtable</span><span class="card-chip">Automation</span><span class="card-chip">VC</span>
+              </div>
+              <span class="card-tag">Big Tech</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         PROJECTS & RESEARCH
+    ══════════════════════════════════════════ -->
+    <section id="projects">
+      <div class="section-wrap">
+        <h2 class="section-title proj-title">Projects & Research 🔬</h2>
+        <div class="card-grid">
+
+          <!-- NEUROPHYS.ai -->
+          <div class="exp-card proj-card" data-card="neurophys">
+            <div class="award-badge">🏆 Hollomon Award</div>
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">NEUROPHYS.ai</div>
+              <div class="card-role">Mobile Physical Therapy Platform</div>
+              <div class="card-date">June 2024 – Present</div>
+              <p class="card-desc">Full-stack app for patient progress tracking, awarded at the Hollomon Health Innovation Challenge.</p>
+              <div class="card-chips">
+                <span class="card-chip">Full-Stack</span><span class="card-chip">Android</span><span class="card-chip">iOS</span><span class="card-chip">Firebase</span>
+              </div>
+              <span class="card-tag">HealthTech</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- Allen School Research Symposium -->
+          <div class="exp-card proj-card" data-card="allenresearch">
+            <div class="award-badge">🎓 Poster Presentation</div>
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Allen School Research Symposium</div>
+              <div class="card-role">Integrating AI Into Assignment Design</div>
+              <div class="card-date">January 2024 – Present</div>
+              <p class="card-desc">Research on how AI tools influence assignment design and learning outcomes in college CS courses.</p>
+              <div class="card-chips">
+                <span class="card-chip">Research</span><span class="card-chip">AI/Ed-Tech</span><span class="card-chip">UW CSE</span>
+              </div>
+              <span class="card-tag">Research</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- DubHacks 2024 -->
+          <div class="exp-card proj-card" data-card="dubhacks24">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">DubHacks 2024</div>
+              <div class="card-role">AWS Study Tool — Grade Predictor & Planner</div>
+              <div class="card-date">October 2024</div>
+              <p class="card-desc">A personalized study tool on AWS PartyRock that predicts class grades and generates custom study plans.</p>
+              <div class="card-chips">
+                <span class="card-chip">AWS PartyRock</span><span class="card-chip">AI</span><span class="card-chip">Hackathon</span>
+              </div>
+              <span class="card-tag">Hackathon</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- DubHacks 2023 -->
+          <div class="exp-card proj-card" data-card="dubhacks23">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">DubHacks 2023</div>
+              <div class="card-role">Mental Health Support App</div>
+              <div class="card-date">October 2023</div>
+              <p class="card-desc">Built a mental health support app with a GPT-powered AI chatbot using Flutter and Android Studio.</p>
+              <div class="card-chips">
+                <span class="card-chip">Flutter</span><span class="card-chip">Android Studio</span><span class="card-chip">GPT API</span>
+              </div>
+              <span class="card-tag">Hackathon</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- Women in Informatics Hackathon -->
+          <div class="exp-card proj-card" data-card="winhacks">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Women in Informatics Hackathon</div>
+              <div class="card-role">Sustainability App — Farmers' Market Finder</div>
+              <div class="card-date">January 2024</div>
+              <p class="card-desc">Designed a sustainability-focused mobile app in Figma connecting users with local farmers' markets.</p>
+              <div class="card-chips">
+                <span class="card-chip">Figma</span><span class="card-chip">UI/UX</span><span class="card-chip">Sustainability</span>
+              </div>
+              <span class="card-tag">Hackathon</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CLUBS & LEADERSHIP
+    ══════════════════════════════════════════ -->
+    <section id="clubs">
+      <div class="section-wrap">
+        <h2 class="section-title club-title">Clubs & Leadership 💚</h2>
+        <div class="card-grid">
+
+          <!-- Kathakaars -->
+          <div class="exp-card club-card" data-card="kathakaars">
+            <div class="award-badge" style="background: linear-gradient(135deg,#a8d8c0,#6fbfa0); color:#1a4a35; box-shadow: 0 2px 8px rgba(95,143,122,0.30);">👑 President</div>
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Kathakaars</div>
+              <div class="card-role">President</div>
+              <div class="card-date">University of Washington</div>
+              <p class="card-desc">Indian classical dance group at UW, celebrating South Asian culture and artistic expression.</p>
+              <div class="card-chips">
+                <span class="card-chip">Leadership</span><span class="card-chip">Indian Classical Dance</span><span class="card-chip">Arts</span>
+              </div>
+              <span class="card-tag">Club Leadership</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- Women in Computing -->
+          <div class="exp-card club-card" data-card="wic">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Women in Computing</div>
+              <div class="card-role">Social Media Director</div>
+              <div class="card-date">University of Washington</div>
+              <p class="card-desc">Growing the WiC community online, spotlighting members and events to inspire women in tech at UW.</p>
+              <div class="card-chips">
+                <span class="card-chip">Social Media</span><span class="card-chip">Community</span><span class="card-chip">Content Creation</span>
+              </div>
+              <span class="card-tag">Club Leadership</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+          <!-- SWE / SWEHacks -->
+          <div class="exp-card club-card" data-card="swe">
+            <div class="card-img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>📸 add your photo here</span>
+            </div>
+            <div class="card-body">
+              <div class="card-company">Society of Women Engineers</div>
+              <div class="card-role">Corporate Relations Director — SWEHacks</div>
+              <div class="card-date">University of Washington</div>
+              <p class="card-desc">Planning UW's annual SWEHacks hackathon and managing sponsor relationships to make it happen.</p>
+              <div class="card-chips">
+                <span class="card-chip">Event Planning</span><span class="card-chip">Sponsorships</span><span class="card-chip">Hackathon</span>
+              </div>
+              <span class="card-tag">Club Leadership</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         HOBBIES & INTERESTS
+    ══════════════════════════════════════════ -->
+    <section id="hobbies">
+      <div class="section-wrap">
+        <h2 class="section-title hobby-title">Life Outside Code 🍵</h2>
+
+        <!-- photo gallery tiles -->
+        <div class="hobby-tiles">
+
+          <div class="hobby-tile" data-gallery="matcha">
+            <!-- swap placeholder for a cover photo: <img src="photos/matcha-cover.jpg" alt="Matcha"> -->
+            <div class="hobby-tile-placeholder">
+              <span class="hobby-emoji">🍵</span>
+              <span>📸 add photos</span>
+            </div>
+            <div class="hobby-tile-label">matcha everything</div>
+            <div class="hobby-tile-hint">tap to see photos</div>
+          </div>
+
+          <div class="hobby-tile" data-gallery="coffee">
+            <div class="hobby-tile-placeholder">
+              <span class="hobby-emoji">☕</span>
+              <span>📸 add photos</span>
+            </div>
+            <div class="hobby-tile-label">coffee shop hopping</div>
+            <div class="hobby-tile-hint">tap to see photos</div>
+          </div>
+
+          <div class="hobby-tile" data-gallery="hiking">
+            <div class="hobby-tile-placeholder">
+              <span class="hobby-emoji">🥾</span>
+              <span>📸 add photos</span>
+            </div>
+            <div class="hobby-tile-label">hiking the PNW</div>
+            <div class="hobby-tile-hint">tap to see photos</div>
+          </div>
+
+          <!-- To add a new hobby tile: copy one of the blocks above,
+               set a unique data-gallery="yourkey", and add a matching
+               entry in the GALLERIES object in script.js -->
+
+        </div>
+
+        <!-- ratings shelves -->
+        <div class="ratings-divider">my favourites</div>
+        <div class="ratings-grid">
+
+          <!-- MOVIES -->
+          <div class="ratings-shelf" id="movies-shelf">
+            <div class="shelf-heading">🎬 Movies</div>
+
+            <div class="rating-row">
+              <div class="rating-cover">🎬</div>
+              <div class="rating-info">
+                <div class="rating-title">Everything Everywhere All at Once</div>
+                <div class="rating-sub">2022 · Sci-fi / A24</div>
+                <div class="bubble-rating">
+                  <span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span>
+                </div>
+                <div class="rating-note">absolutely changed me</div>
+              </div>
+            </div>
+
+            <div class="rating-row">
+              <div class="rating-cover">🎬</div>
+              <div class="rating-info">
+                <div class="rating-title">Spirited Away</div>
+                <div class="rating-sub">2001 · Studio Ghibli</div>
+                <div class="bubble-rating">
+                  <span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span>
+                </div>
+                <div class="rating-note">timeless 💛</div>
+              </div>
+            </div>
+
+            <div class="rating-row">
+              <div class="rating-cover">🎬</div>
+              <div class="rating-info">
+                <div class="rating-title">add your favourite!</div>
+                <div class="rating-sub">year · genre</div>
+                <div class="bubble-rating">
+                  <span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub"></span>
+                </div>
+                <div class="rating-note">your note here</div>
+              </div>
+            </div>
+
+            <!--
+              To add a movie: copy a .rating-row block and edit:
+              - emoji/image in .rating-cover
+              - title, sub, note text
+              - filled/empty .bub spans (5 total = full rating)
+              - use class "half" on a .bub for a half bubble
+            -->
+          </div>
+
+          <!-- BOOKS -->
+          <div class="ratings-shelf" id="books-shelf">
+            <div class="shelf-heading">📚 Books</div>
+
+            <div class="rating-row">
+              <div class="rating-cover">📖</div>
+              <div class="rating-info">
+                <div class="rating-title">The Hitchhiker's Guide to the Galaxy</div>
+                <div class="rating-sub">Douglas Adams · Sci-fi</div>
+                <div class="bubble-rating">
+                  <span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span>
+                </div>
+                <div class="rating-note">42.</div>
+              </div>
+            </div>
+
+            <div class="rating-row">
+              <div class="rating-cover">📖</div>
+              <div class="rating-info">
+                <div class="rating-title">add your favourite!</div>
+                <div class="rating-sub">author · genre</div>
+                <div class="bubble-rating">
+                  <span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub"></span>
+                </div>
+                <div class="rating-note">your note here</div>
+              </div>
+            </div>
+
+            <div class="rating-row">
+              <div class="rating-cover">📖</div>
+              <div class="rating-info">
+                <div class="rating-title">add your favourite!</div>
+                <div class="rating-sub">author · genre</div>
+                <div class="bubble-rating">
+                  <span class="bub filled"></span><span class="bub filled"></span><span class="bub filled"></span><span class="bub"></span><span class="bub"></span>
+                </div>
+                <div class="rating-note">your note here</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>made with 💙 by Ioli · Seattle, WA</footer>
+
+    <!-- ══════════════════════════════════════════
+         GALLERY LIGHTBOX
+    ══════════════════════════════════════════ -->
+    <div class="gallery-overlay" id="gallery-overlay" role="dialog" aria-modal="true" aria-label="Photo gallery">
+      <button class="gallery-close" id="gallery-close" aria-label="Close gallery">✕</button>
+      <div class="gallery-stage">
+        <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="gallery-img-wrap" id="gallery-img-wrap"></div>
+        <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Next photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="gallery-meta">
+        <div class="gallery-title" id="gallery-title"></div>
+        <div class="gallery-counter" id="gallery-counter"></div>
+      </div>
+      <div class="gallery-thumbs" id="gallery-thumbs"></div>
     </div>
-  
-    <div>
-      <br></br>
-      <a href="Ioli_Shrivastava_Resume.pdf" download="Ioli_Shrivastava_Resume.pdf">
-        <button type="button">Download my Resume</button>
-      </a>
-      
-      <a href="https://www.linkedin.com/in/ioli-shrivastava">
-        <button type="button">Connect with me on LinkedIn</button>
-      </a>
+
+    <!-- ══════════════════════════════════════════
+         CARD MODAL
+    ══════════════════════════════════════════ -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Details">
+      <div class="modal" id="modal">
+        <div class="modal-deco" style="width:80px;height:80px;top:-24px;right:50px;"></div>
+        <div class="modal-deco" style="width:44px;height:44px;bottom:80px;left:-16px;"></div>
+        <div class="modal-deco" style="width:28px;height:28px;top:220px;right:-10px;"></div>
+        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+        <div id="modal-img-area"></div>
+        <div class="modal-content">
+          <div id="modal-award-area"></div>
+          <div class="modal-company" id="modal-company"></div>
+          <div class="modal-role"    id="modal-role"></div>
+          <div class="modal-date"    id="modal-date"></div>
+          <div class="modal-label">What I did</div>
+          <ul class="modal-bullets"  id="modal-bullets"></ul>
+          <div class="modal-label">Skills & tools</div>
+          <div class="modal-chips"   id="modal-chips"></div>
+          <div id="modal-tag-area"></div>
+        </div>
+      </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
