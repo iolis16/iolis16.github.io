@@ -96,7 +96,7 @@ const CARDS = {
     role: 'AWS Study Tool — Grade Predictor & Planner',
     date: 'October 2024',
     tag: 'Hackathon',
-    img: 'photos/gradebooster.jpeg',
+    img: 'photos/gradebooster.jpg',
     bullets: [
       'Built a study tool on AWS PartyRock that predicts class grades based on student input and study patterns.',
       "Generated personalized study plans tailored to each user's schedule, workload, and learning goals.",
@@ -111,7 +111,7 @@ const CARDS = {
     role: 'Mental Health Support App',
     date: 'October 2023',
     tag: 'Hackathon',
-    img: 'photos/mindfulme.jpeg',
+    img: 'photos/mindfulme.jpg',
     bullets: [
       'Built a mental health support app with a GPT-powered AI chatbot that provides compassionate, on-demand conversation.',
       'Developed the mobile app using Flutter and Android Studio, targeting Android devices.',
