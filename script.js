@@ -67,7 +67,7 @@ const CARDS = {
     date: 'June 2024 – Present',
     tag: 'HealthTech',
     award: '🏆 Hollomon Health Innovation Challenge Winner',
-    img: '',
+    img: 'photos/neurophys.jpeg',
     bullets: [
       'Developed a full-stack platform for a mobile physical therapy app, supporting patients on both Android and iOS.',
       'Built secure backend workflows for patient progress tracking with HIPAA-conscious data handling.',
@@ -82,7 +82,7 @@ const CARDS = {
     date: 'January 2024 – Present',
     tag: 'Academic Research',
     award: '🎓 Poster Presentation · UW Allen School',
-    img: '',
+    img: 'photos/researchposter.jpeg',
     bullets: [
       'Ongoing research project examining how AI tools influence the design of assignments in college-level computer science courses.',
       'Investigated methods for evaluating learning outcomes in the context of increasing AI integration across coursework.',
@@ -96,12 +96,13 @@ const CARDS = {
     role: 'AWS Study Tool — Grade Predictor & Planner',
     date: 'October 2024',
     tag: 'Hackathon',
-    img: '',
+    img: 'photos/gradebooster.jpeg',
     bullets: [
       'Built a study tool on AWS PartyRock that predicts class grades based on student input and study patterns.',
       "Generated personalized study plans tailored to each user's schedule, workload, and learning goals.",
       "Competed at DubHacks, the University of Washington's flagship annual hackathon.",
     ],
+     link: 'https://devpost.com/software/grade-booster?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team',
     skills: ['AWS PartyRock', 'Generative AI', 'Prompt Engineering', 'Rapid Prototyping'],
   },
   dubhacks23: {
@@ -110,12 +111,13 @@ const CARDS = {
     role: 'Mental Health Support App',
     date: 'October 2023',
     tag: 'Hackathon',
-    img: '',
+    img: 'photos/mindfulme.jpeg',
     bullets: [
       'Built a mental health support app with a GPT-powered AI chatbot that provides compassionate, on-demand conversation.',
       'Developed the mobile app using Flutter and Android Studio, targeting Android devices.',
       'Designed the UX to be calm and accessible for users experiencing stress or anxiety.',
     ],
+     link: 'https://devpost.com/software/mindfulme-cdny03',
     skills: ['Flutter', 'Android Studio', 'GPT API', 'Mobile Dev', 'UX Design'],
   },
   winhacks: {
@@ -124,12 +126,13 @@ const CARDS = {
     role: "Sustainability App — Farmers' Market Finder",
     date: 'January 2024',
     tag: 'Hackathon',
-    img: '',
+    img: 'photos/seattlefresh.jpeg',
     bullets: [
       "Designed a sustainability-focused mobile app in Figma to connect users with local farmers' markets and seasonal produce.",
       'Focused on accessibility and community impact, aiming to make local food sources more discoverable.',
       'Competed at the Women in Informatics Hackathon at the University of Washington.',
     ],
+     link: 'https://www.figma.com/design/a2sjVayEeYAuU2vK0Yqwfb/SeattleFresh-Mock-Up?node-id=0-1&p=f',
     skills: ['Figma', 'UI/UX Design', 'Mobile Prototyping', 'Sustainability', 'User Research'],
   },
 
