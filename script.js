@@ -12,7 +12,7 @@ const CARDS = {
     role: 'Software Engineering Intern',
     date: 'June 2025 – September 2025',
     tag: 'Internship',
-    img: 'photos/oracle.jpeg',
+    img: 'oracle.jpeg',
     bullets: [
       'Implemented SQL and PL/SQL solutions to automate weekly snapshot jobs and persist historical cluster data across infrastructure systems.',
       'Developed interactive dashboards in Oracle Analytics Cloud (Horizon) to visualize regional cache cluster trends for internal engineering teams.',
@@ -314,12 +314,23 @@ function openModal(key) {
 
   // image
   const imgArea = document.getElementById('modal-img-area');
-  imgArea.innerHTML = d.img
-    ? `<img class="modal-img" src="${d.img}" alt="${d.company}">`
-    : `<div class="modal-img-placeholder">
+  if (d.img && d.img.trim() !== '') {
+    const im = document.createElement('img');
+    im.className = 'modal-img';
+    im.alt = d.company;
+    im.style.opacity = '0';
+    im.style.transition = 'opacity 0.3s ease';
+    im.onload  = () => { im.style.opacity = '1'; };
+    im.onerror = () => { imgArea.innerHTML = `<div class="modal-img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg><span>image couldn't load 🙁</span></div>`; };
+    im.src = d.img;
+    imgArea.innerHTML = '';
+    imgArea.appendChild(im);
+  } else {
+    imgArea.innerHTML = `<div class="modal-img-placeholder">
          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
          <span>📸 add your photo here</span>
        </div>`;
+  }
 
   // award badge
   document.getElementById('modal-award-area').innerHTML = d.award
@@ -447,4 +458,3 @@ document.addEventListener('keydown', e => {
   // modal close
   if (e.key === 'Escape') closeModal();
 });
-  
