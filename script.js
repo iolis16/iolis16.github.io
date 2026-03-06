@@ -12,7 +12,7 @@ const CARDS = {
     role: 'Software Engineering Intern',
     date: 'June 2025 – September 2025',
     tag: 'Internship',
-    img: 'oracle.jpeg',
+    img: 'photos/oracle.jpeg',
     bullets: [
       'Implemented SQL and PL/SQL solutions to automate weekly snapshot jobs and persist historical cluster data across infrastructure systems.',
       'Developed interactive dashboards in Oracle Analytics Cloud (Horizon) to visualize regional cache cluster trends for internal engineering teams.',
@@ -25,7 +25,7 @@ const CARDS = {
     role: 'Software Engineering Intern',
     date: 'January 2025 – June 2025',
     tag: 'Startup · Y Combinator',
-    img: 'venu.jpeg',
+    img: 'photos/venu.jpeg',
     bullets: [
       'Built automation features for email campaigns, LinkedIn outreach, and conference coordination to boost client sales pipelines.',
       'Streamlined customer lead-generation and follow-up workflows based on direct user feedback and rapid iteration cycles.',
@@ -38,7 +38,7 @@ const CARDS = {
     role: 'Software Engineering Intern',
     date: 'September 2024 – December 2024',
     tag: 'Nonprofit',
-    img: 'pinkstairs.jpeg',
+    img: 'photos/pinkstairs.jpeg',
     bullets: [
       "Redesigned and rebuilt the website backend using Node.js, NestJS, and SQL to modernize the organization's tech stack.",
       'Improved site performance and accessibility to better support the leadership development mission.',
@@ -51,7 +51,7 @@ const CARDS = {
     role: 'Accelerator Intern',
     date: 'June – September 2024',
     tag: 'Internship',
-    img: 'tmobile.jpeg',
+    img: 'photos/tmobile.jpeg',
     bullets: [
       "Automated scouting routines in Airtable, cutting recruiter time by 30% and accelerating startup outreach velocity.",
       "Created an internal knowledge base to streamline collaboration between T-Mobile's team, VCs, and startup partners.",
