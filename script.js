@@ -345,7 +345,13 @@ function openModal(key) {
   document.getElementById('modal-tag-area').innerHTML  = `<span class="modal-tag">${d.tag}</span>`;
   document.getElementById('modal-bullets').innerHTML   = d.bullets.map(b => `<li>${b}</li>`).join('');
   document.getElementById('modal-chips').innerHTML     = d.skills.map(s => `<span class="modal-chip">${s}</span>`).join('');
-
+  const linkArea = document.getElementById('modal-link-area');
+  const linkArea = document.getElementById('modal-link-area');
+  linkArea.innerHTML = d.link
+    ? `<a class="modal-link-btn" href="${d.link}" target="_blank" rel="noopener">
+         🔗 View Project
+       </a>`
+    : '';
   modalOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   modalEl.scrollTop = 0;
