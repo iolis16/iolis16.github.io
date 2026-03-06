@@ -392,6 +392,18 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 .proj-modal .modal-tag { background: var(--proj-light); color: var(--proj); }
 .club-modal .modal-tag { background: var(--club-light); color: var(--club); }
 
+.modal-link-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px;
+  background: rgba(131,141,177,0.14); border: 1.5px solid rgba(131,141,177,0.28);
+  border-radius: 99px; padding: 6px 16px;
+  font-size: 0.82em; font-weight: 700; color: var(--navy);
+  text-decoration: none; transition: background 0.2s, transform 0.15s;
+}
+.modal-link-btn:hover { background: rgba(131,141,177,0.28); transform: translateY(-1px); }
+.proj-modal .modal-link-btn { background: var(--proj-light); border-color: var(--proj-border); color: var(--proj); }
+.proj-modal .modal-link-btn:hover { background: rgba(177,122,141,0.25); }
+
 /* ══════════════════════════════════════════
    HOBBIES — PHOTO TILES
 ══════════════════════════════════════════ */
