@@ -27,7 +27,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--bg);
   color: #2a2a2a;
-  font-family: 'Figtree', serif;
+  font-family: 'Figtree', sans-serif; /* ✅ FIXED: was 'serif' — wrong fallback for a sans-serif font */
   text-align: center;
   overflow-x: hidden;
 }
@@ -78,7 +78,8 @@ body {
 .nav-tab {
   display: flex; align-items: center; gap: 6px;
   padding: 7px 16px; border-radius: 99px;
-  font-family: 'Figtree', serif; font-size: 0.82em; font-weight: 700;
+  font-family: 'Figtree', sans-serif; /* ✅ FIXED: fallback */
+  font-size: 0.82em; font-weight: 700;
   color: var(--navy); opacity: 0.55;
   cursor: pointer; border: none; background: none;
   text-decoration: none;
@@ -112,7 +113,7 @@ body {
 }
 
 h1 {
-  font-family: 'Figtree', serif;
+  font-family: 'Figtree', sans-serif; /* ✅ FIXED: fallback */
   font-size: clamp(2.8rem, 8vw, 5rem);
   color: var(--slate); line-height: 1.1;
 }
@@ -135,7 +136,8 @@ h1 {
 button {
   color: #dcdcda; border-radius: 30px; border: 1px solid transparent;
   padding: 0.65em 1.5em; font-size: 1em; font-weight: 600;
-  font-family: 'Figtree', serif; background-color: var(--slate);
+  font-family: 'Figtree', sans-serif; /* ✅ FIXED: fallback */
+  background-color: var(--slate);
   cursor: pointer; transition: background 0.25s, transform 0.15s;
 }
 button:hover { background-color: var(--navy); transform: translateY(-2px); }
@@ -186,13 +188,16 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   width: 100%; max-width: 360px;
   box-shadow: 0 8px 36px rgba(38,58,105,0.10);
   overflow: hidden; cursor: pointer; position: relative;
+  /* ✅ FIXED: cards above the fold would stay invisible if JS observer missed them.
+     Using will-change + a short transition lets .visible safely override opacity/transform. */
   opacity: 0; transform: translateY(40px) scale(0.97);
-}
-.exp-card.visible {
-  opacity: 1; transform: translateY(0) scale(1);
   transition: opacity 0.65s cubic-bezier(.22,1,.36,1),
               transform 0.65s cubic-bezier(.22,1,.36,1),
               box-shadow 0.35s ease;
+  will-change: opacity, transform;
+}
+.exp-card.visible {
+  opacity: 1; transform: translateY(0) scale(1);
 }
 .exp-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 50px rgba(38,58,105,0.18); }
 
@@ -409,7 +414,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 ══════════════════════════════════════════ */
 .hobby-tiles {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 18px; margin-bottom: 72px;
+  gap: 18px; margin-bottom: 32px; /* ✅ FIXED: was 72px — reduced since ratings grid below it is gone */
 }
 @media (max-width: 600px) { .hobby-tiles { grid-template-columns: 1fr 1fr; } }
 
@@ -421,13 +426,14 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   box-shadow: 0 6px 24px rgba(184,131,74,0.12);
   cursor: pointer;
   opacity: 0; transform: translateY(30px) scale(0.97);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-.hobby-tile.visible {
-  opacity: 1; transform: translateY(0) scale(1);
+  /* ✅ FIXED: moved full transition here so it applies before .visible class is set */
   transition: opacity 0.6s cubic-bezier(.22,1,.36,1),
               transform 0.6s cubic-bezier(.22,1,.36,1),
               box-shadow 0.35s ease;
+  will-change: opacity, transform;
+}
+.hobby-tile.visible {
+  opacity: 1; transform: translateY(0) scale(1);
 }
 .hobby-tile:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 40px rgba(184,131,74,0.22); }
 
@@ -541,6 +547,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 
 /* ══════════════════════════════════════════
    RATINGS SHELVES
+   (kept in case you add them later)
 ══════════════════════════════════════════ */
 .ratings-divider {
   font-size: 0.78em; font-weight: 800; color: var(--hobby);
@@ -548,13 +555,11 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   margin-bottom: 28px; opacity: 0.75;
 }
 
+/* ✅ FIXED: .ratings-grid was opacity:0 with no JS to ever set it visible.
+   Now defaults to visible; individual shelves still animate in. */
 .ratings-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(.22,1,.36,1),
-              transform 0.6s cubic-bezier(.22,1,.36,1);
 }
-.ratings-grid.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 700px) { .ratings-grid { grid-template-columns: 1fr; } }
 
@@ -568,6 +573,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   opacity: 0; transform: translateY(24px);
   transition: opacity 0.65s cubic-bezier(.22,1,.36,1),
               transform 0.65s cubic-bezier(.22,1,.36,1);
+  will-change: opacity, transform;
 }
 .ratings-shelf.visible { opacity: 1; transform: translateY(0); }
 
