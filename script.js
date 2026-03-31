@@ -102,7 +102,7 @@ const CARDS = {
       "Generated personalized study plans tailored to each user's schedule, workload, and learning goals.",
       "Competed at DubHacks, the University of Washington's flagship annual hackathon.",
     ],
-     link: 'https://devpost.com/software/grade-booster?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team',
+    link: 'https://devpost.com/software/grade-booster?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team',
     skills: ['AWS PartyRock', 'Generative AI', 'Prompt Engineering', 'Rapid Prototyping'],
   },
   dubhacks23: {
@@ -117,7 +117,7 @@ const CARDS = {
       'Developed the mobile app using Flutter and Android Studio, targeting Android devices.',
       'Designed the UX to be calm and accessible for users experiencing stress or anxiety.',
     ],
-     link: 'https://devpost.com/software/mindfulme-cdny03',
+    link: 'https://devpost.com/software/mindfulme-cdny03',
     skills: ['Flutter', 'Android Studio', 'GPT API', 'Mobile Dev', 'UX Design'],
   },
   winhacks: {
@@ -132,7 +132,7 @@ const CARDS = {
       'Focused on accessibility and community impact, aiming to make local food sources more discoverable.',
       'Competed at the Women in Informatics Hackathon at the University of Washington.',
     ],
-     link: 'https://www.figma.com/design/a2sjVayEeYAuU2vK0Yqwfb/SeattleFresh-Mock-Up?node-id=0-1&p=f',
+    link: 'https://www.figma.com/design/a2sjVayEeYAuU2vK0Yqwfb/SeattleFresh-Mock-Up?node-id=0-1&p=f',
     skills: ['Figma', 'UI/UX Design', 'Mobile Prototyping', 'Sustainability', 'User Research'],
   },
 
@@ -183,36 +183,22 @@ const CARDS = {
 
 /* ══════════════════════════════════════════════════════════════
    GALLERY DATA
-   Add photos to the `photos` array for each hobby.
-   Entry format: { src: 'photos/filename.jpg', caption: 'your caption' }
-   Leave photos: [] to show a friendly placeholder.
-   To add a new hobby: add a tile in index.html with data-gallery="mykey"
-   and add a matching entry here.
 ══════════════════════════════════════════════════════════════ */
 const GALLERIES = {
   matcha: {
     title: '🍵 matcha everything',
     emoji: '🍵',
-    photos: [
-      // { src: 'photos/matcha1.jpg', caption: 'favourite spot in Capitol Hill' },
-      // { src: 'photos/matcha2.jpg', caption: 'homemade ceremonial grade 🌿' },
-    ],
+    photos: [],
   },
   coffee: {
     title: '☕ coffee shop hopping',
     emoji: '☕',
-    photos: [
-      // { src: 'photos/coffee1.jpg', caption: 'rainy day vibes' },
-      // { src: 'photos/coffee2.jpg', caption: 'studying at Victrola' },
-    ],
+    photos: [],
   },
   hiking: {
     title: '🥾 hiking the PNW',
     emoji: '🥾',
-    photos: [
-      // { src: 'photos/hike1.jpg', caption: 'Rattlesnake Ledge' },
-      // { src: 'photos/hike2.jpg', caption: 'Mt Rainier views' },
-    ],
+    photos: [],
   },
 };
 
@@ -345,13 +331,15 @@ function openModal(key) {
   document.getElementById('modal-tag-area').innerHTML  = `<span class="modal-tag">${d.tag}</span>`;
   document.getElementById('modal-bullets').innerHTML   = d.bullets.map(b => `<li>${b}</li>`).join('');
   document.getElementById('modal-chips').innerHTML     = d.skills.map(s => `<span class="modal-chip">${s}</span>`).join('');
-  const linkArea = document.getElementById('modal-link-area');
+
+  // ✅ FIXED: was declared twice before — now declared only once
   const linkArea = document.getElementById('modal-link-area');
   linkArea.innerHTML = d.link
     ? `<a class="modal-link-btn" href="${d.link}" target="_blank" rel="noopener">
          🔗 View Project
        </a>`
     : '';
+
   modalOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   modalEl.scrollTop = 0;
@@ -454,7 +442,6 @@ document.querySelectorAll('.hobby-tile[data-gallery]').forEach(tile => {
    KEYBOARD SHORTCUTS
 ══════════════════════════════════════════════════════════════ */
 document.addEventListener('keydown', e => {
-  // gallery keyboard nav
   if (galOverlay.classList.contains('open')) {
     if (e.key === 'ArrowLeft') { if (galIdx > 0) renderGalleryPhoto(galIdx - 1); }
     if (e.key === 'ArrowRight') {
@@ -464,6 +451,5 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeGallery();
     return;
   }
-  // modal close
   if (e.key === 'Escape') closeModal();
 });
