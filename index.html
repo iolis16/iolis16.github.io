@@ -73,8 +73,6 @@
 
           <!-- Oracle -->
           <div class="exp-card" data-card="oracle">
-            <!-- to add a photo: replace the .card-img-placeholder div with:
-                 <img class="card-img" src="photos/oracle.jpg" alt="Oracle"> -->
             <img class="card-img" src="photos/oracle.jpeg" alt="Oracle">
             <div class="card-body">
               <div class="card-company">Oracle</div>
@@ -364,7 +362,6 @@
         <div class="hobby-tiles">
 
           <div class="hobby-tile" data-gallery="matcha">
-            <!-- swap placeholder for a cover photo: <img src="photos/matcha-cover.jpg" alt="Matcha"> -->
             <div class="hobby-tile-placeholder">
               <span class="hobby-emoji">🍵</span>
               <span>📸 add photos</span>
@@ -391,11 +388,11 @@
             <div class="hobby-tile-hint">tap to see photos</div>
           </div>
 
-          <!-- To add a new hobby tile: copy one of the blocks above,
-               set a unique data-gallery="yourkey", and add a matching
-               entry in the GALLERIES object in script.js -->
-
         </div>
+
+      </div>
+    </section>
+    <!-- ✅ FIXED: </section> was missing — footer was incorrectly inside the hobbies section -->
 
     <footer>made with 💙 by Ioli · Seattle, WA</footer>
 
@@ -444,6 +441,7 @@
         </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
