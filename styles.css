@@ -93,7 +93,6 @@ body {
 .nav-tab.active[data-section="experience"] { background: var(--slate); }
 .nav-tab.active[data-section="projects"]   { background: var(--proj);  }
 .nav-tab.active[data-section="clubs"]      { background: var(--club);  }
-.nav-tab.active[data-section="hobbies"]    { background: var(--hobby); }
 
 .nav-tab .nav-emoji { font-size: 1em; line-height: 1; }
 
@@ -170,8 +169,6 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 .section-title.proj-title::after { background: var(--proj); }
 .section-title.club-title { color: var(--club); }
 .section-title.club-title::after { background: var(--club); }
-.section-title.hobby-title { color: var(--hobby); }
-.section-title.hobby-title::after { background: var(--hobby); }
 
 /* card grid */
 .card-grid {
@@ -408,142 +405,6 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 .modal-link-btn:hover { background: rgba(131,141,177,0.28); transform: translateY(-1px); }
 .proj-modal .modal-link-btn { background: var(--proj-light); border-color: var(--proj-border); color: var(--proj); }
 .proj-modal .modal-link-btn:hover { background: rgba(177,122,141,0.25); }
-
-/* ══════════════════════════════════════════
-   HOBBIES — PHOTO TILES
-══════════════════════════════════════════ */
-.hobby-tiles {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 18px; margin-bottom: 32px; /* ✅ FIXED: was 72px — reduced since ratings grid below it is gone */
-}
-@media (max-width: 600px) { .hobby-tiles { grid-template-columns: 1fr 1fr; } }
-
-.hobby-tile {
-  border-radius: 24px; overflow: hidden; position: relative;
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(135deg, #e5d6c3 0%, #f0e6d8 100%);
-  border: 1.5px solid var(--hobby-border);
-  box-shadow: 0 6px 24px rgba(184,131,74,0.12);
-  cursor: pointer;
-  opacity: 0; transform: translateY(30px) scale(0.97);
-  /* ✅ FIXED: moved full transition here so it applies before .visible class is set */
-  transition: opacity 0.6s cubic-bezier(.22,1,.36,1),
-              transform 0.6s cubic-bezier(.22,1,.36,1),
-              box-shadow 0.35s ease;
-  will-change: opacity, transform;
-}
-.hobby-tile.visible {
-  opacity: 1; transform: translateY(0) scale(1);
-}
-.hobby-tile:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 40px rgba(184,131,74,0.22); }
-
-.hobby-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.hobby-tile-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 8px;
-  color: var(--hobby); font-size: 0.8em; font-weight: 600; letter-spacing: 0.04em;
-}
-.hobby-tile-placeholder .hobby-emoji { font-size: 2.4em; }
-
-.hobby-tile-label {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 28px 14px 10px;
-  background: linear-gradient(to top, rgba(38,30,20,0.65) 0%, transparent 100%);
-  color: #fff; font-size: 0.9em; font-weight: 700;
-  letter-spacing: 0.04em; text-align: left;
-}
-
-.hobby-tile-hint {
-  position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-  background: rgba(255,255,255,0.82);
-  backdrop-filter: blur(8px);
-  border-radius: 99px; padding: 4px 12px;
-  font-size: 0.72em; font-weight: 700; color: var(--hobby);
-  letter-spacing: 0.04em; white-space: nowrap;
-  opacity: 0; transition: opacity 0.2s;
-  pointer-events: none;
-}
-.hobby-tile:hover .hobby-tile-hint { opacity: 1; }
-
-/* ══════════════════════════════════════════
-   GALLERY LIGHTBOX
-══════════════════════════════════════════ */
-.gallery-overlay {
-  position: fixed; inset: 0; z-index: 1100;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 16px; padding: 20px;
-  background: rgba(20,15,10,0.88);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.gallery-overlay.open { opacity: 1; pointer-events: all; }
-
-.gallery-close {
-  position: absolute; top: 18px; right: 18px;
-  width: 38px; height: 38px; border-radius: 50%; border: none;
-  background: rgba(255,255,255,0.15); color: #fff;
-  font-size: 1.1em; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s, transform 0.2s; z-index: 10; padding: 0;
-}
-.gallery-close:hover { background: rgba(255,255,255,0.28); transform: scale(1.1) rotate(90deg); }
-
-.gallery-stage { display: flex; align-items: center; gap: 12px; max-width: 800px; width: 100%; }
-
-.gallery-img-wrap {
-  flex: 1; display: flex; align-items: center; justify-content: center;
-  min-height: 280px; max-height: 54vh; position: relative;
-}
-.gallery-img-wrap img {
-  max-width: 100%; max-height: 54vh;
-  border-radius: 18px; object-fit: contain;
-  box-shadow: 0 12px 60px rgba(0,0,0,0.5);
-  opacity: 0; transition: opacity 0.25s ease;
-}
-.gallery-img-wrap img.loaded { opacity: 1; }
-
-.gallery-placeholder {
-  width: 280px; height: 280px; border-radius: 18px;
-  background: rgba(184,131,74,0.15);
-  border: 2px dashed rgba(184,131,74,0.4);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 10px;
-  color: rgba(255,255,255,0.6); font-size: 0.9em; font-weight: 600;
-  text-align: center; padding: 24px;
-}
-.gallery-placeholder .ph-emoji { font-size: 2.5em; }
-
-.gallery-nav {
-  width: 42px; height: 42px; border-radius: 50%; border: none; flex-shrink: 0;
-  background: rgba(255,255,255,0.14); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: background 0.2s, transform 0.15s; padding: 0;
-}
-.gallery-nav:hover { background: rgba(255,255,255,0.28); transform: scale(1.08); }
-.gallery-nav:disabled { opacity: 0.25; cursor: default; transform: none; }
-.gallery-nav svg { width: 20px; }
-
-.gallery-meta { display: flex; align-items: center; gap: 16px; }
-.gallery-title { color: #fff; font-size: 1em; font-weight: 700; letter-spacing: 0.04em; }
-.gallery-counter { color: rgba(255,255,255,0.5); font-size: 0.82em; font-weight: 600; }
-
-.gallery-thumbs {
-  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 600px;
-}
-.gallery-thumb {
-  width: 52px; height: 52px; border-radius: 10px; overflow: hidden;
-  border: 2px solid transparent; cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s; flex-shrink: 0;
-  background: rgba(184,131,74,0.2);
-  display: flex; align-items: center; justify-content: center; font-size: 1.4em;
-}
-.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.gallery-thumb.active { border-color: var(--hobby); transform: scale(1.1); }
-.gallery-thumb:hover:not(.active) { border-color: rgba(184,131,74,0.5); }
 
 /* ══════════════════════════════════════════
    RATINGS SHELVES

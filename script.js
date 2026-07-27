@@ -60,6 +60,22 @@ const CARDS = {
   },
 
   /* ── PROJECTS ── */
+  wccce2026: {
+    type: 'proj',
+    company: 'WCCCE 2026',
+    role: 'Build Your Own Feature: A GenAI Assignment for Data Structures',
+    date: 'April 2026',
+    tag: 'Published Paper',
+    award: '🏆 Best Short Paper Award',
+    img: 'photos/wccce2026.jpeg',
+    bullets: [
+      'Co-authored (2nd author) a short experience-report paper on "Build Your Own Feature," an open-ended GenAI assignment model for Data Structures & Algorithms courses.',
+      'Designed an interface-first project workflow that positions GenAI as an implementation aid constrained by a student-authored specification, rather than a source of finished solutions.',
+      'Awarded Best Short Paper at WCCCE 2026, the Western Canada Conference on Computing Education, in Vancouver, BC.',
+    ],
+    link: 'https://event.fourwaves.com/wccce2026/abstracts/74b49d6c-b805-44ee-8cb8-57942f42afc59',
+    skills: ['Research', 'GenAI', 'Computing Education', 'Assignment Design', 'Academic Writing'],
+  },
   neurophys: {
     type: 'proj',
     company: 'NEUROPHYS.ai',
@@ -182,27 +198,6 @@ const CARDS = {
 };
 
 /* ══════════════════════════════════════════════════════════════
-   GALLERY DATA
-══════════════════════════════════════════════════════════════ */
-const GALLERIES = {
-  matcha: {
-    title: '🍵 matcha everything',
-    emoji: '🍵',
-    photos: [],
-  },
-  coffee: {
-    title: '☕ coffee shop hopping',
-    emoji: '☕',
-    photos: [],
-  },
-  hiking: {
-    title: '🥾 hiking the PNW',
-    emoji: '🥾',
-    photos: [],
-  },
-};
-
-/* ══════════════════════════════════════════════════════════════
    TYPED HERO TEXT
 ══════════════════════════════════════════════════════════════ */
 const heroText = "Hi there, I'm Ioli! 👋";
@@ -247,30 +242,10 @@ const cardObserver = new IntersectionObserver((entries) => {
 allCards.forEach(c => cardObserver.observe(c));
 
 /* ══════════════════════════════════════════════════════════════
-   SCROLL FADE-IN — HOBBY TILES & RATING SHELVES
-══════════════════════════════════════════════════════════════ */
-const hobbyEls = document.querySelectorAll('.hobby-tile, .ratings-shelf');
-const hobbyObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const parent = entry.target.closest('.hobby-tiles, .ratings-grid');
-      const siblings = parent
-        ? [...parent.querySelectorAll('.hobby-tile, .ratings-shelf')]
-        : [entry.target];
-      const i = siblings.indexOf(entry.target);
-      entry.target.style.transitionDelay = `${i * 0.10}s`;
-      entry.target.classList.add('visible');
-      hobbyObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.10 });
-hobbyEls.forEach(el => hobbyObserver.observe(el));
-
-/* ══════════════════════════════════════════════════════════════
    NAV SCROLL-SPY
 ══════════════════════════════════════════════════════════════ */
 const navTabs = document.querySelectorAll('.nav-tab');
-const navSections = ['hero', 'experience', 'projects', 'clubs', 'hobbies']
+const navSections = ['hero', 'experience', 'projects', 'clubs']
   .map(id => document.getElementById(id))
   .filter(Boolean);
 
@@ -355,101 +330,8 @@ modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
 
 /* ══════════════════════════════════════════════════════════════
-   PHOTO GALLERY LIGHTBOX
-══════════════════════════════════════════════════════════════ */
-let galKey = null;
-let galIdx = 0;
-
-const galOverlay = document.getElementById('gallery-overlay');
-const galClose   = document.getElementById('gallery-close');
-const galPrev    = document.getElementById('gallery-prev');
-const galNext    = document.getElementById('gallery-next');
-const galImgWrap = document.getElementById('gallery-img-wrap');
-const galTitle   = document.getElementById('gallery-title');
-const galCounter = document.getElementById('gallery-counter');
-const galThumbs  = document.getElementById('gallery-thumbs');
-
-function renderGalleryPhoto(idx) {
-  const g = GALLERIES[galKey];
-  const p = g.photos[idx];
-  galIdx = idx;
-  if (!p) return;
-
-  galImgWrap.innerHTML = `<img src="${p.src}" alt="${p.caption || ''}" onload="this.classList.add('loaded')">`;
-  galTitle.textContent   = p.caption || g.title;
-  galCounter.textContent = `${idx + 1} / ${g.photos.length}`;
-
-  galThumbs.querySelectorAll('.gallery-thumb').forEach((t, i) => {
-    t.classList.toggle('active', i === idx);
-  });
-
-  galPrev.disabled = idx === 0;
-  galNext.disabled = idx === g.photos.length - 1;
-}
-
-function openGallery(key) {
-  galKey = key;
-  const g = GALLERIES[key];
-  if (!g) return;
-
-  galThumbs.innerHTML = '';
-
-  if (g.photos.length === 0) {
-    galImgWrap.innerHTML = `
-      <div class="gallery-placeholder">
-        <span class="ph-emoji">${g.emoji}</span>
-        <span>photos coming soon!<br>add paths to GALLERIES in script.js 📸</span>
-      </div>`;
-    galTitle.textContent   = g.title;
-    galCounter.textContent = '';
-    galPrev.disabled = true;
-    galNext.disabled = true;
-  } else {
-    g.photos.forEach((p, i) => {
-      const t = document.createElement('div');
-      t.className = 'gallery-thumb';
-      t.innerHTML = p.src ? `<img src="${p.src}" alt="${p.caption || ''}">` : g.emoji;
-      t.addEventListener('click', () => renderGalleryPhoto(i));
-      galThumbs.appendChild(t);
-    });
-    renderGalleryPhoto(0);
-  }
-
-  galOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeGallery() {
-  galOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-  galKey = null;
-}
-
-galPrev.addEventListener('click', () => { if (galIdx > 0) renderGalleryPhoto(galIdx - 1); });
-galNext.addEventListener('click', () => {
-  const g = GALLERIES[galKey];
-  if (g && galIdx < g.photos.length - 1) renderGalleryPhoto(galIdx + 1);
-});
-galClose.addEventListener('click', closeGallery);
-galOverlay.addEventListener('click', e => { if (e.target === galOverlay) closeGallery(); });
-
-// hook up hobby tiles
-document.querySelectorAll('.hobby-tile[data-gallery]').forEach(tile => {
-  tile.addEventListener('click', () => openGallery(tile.dataset.gallery));
-});
-
-/* ══════════════════════════════════════════════════════════════
    KEYBOARD SHORTCUTS
 ══════════════════════════════════════════════════════════════ */
 document.addEventListener('keydown', e => {
-  if (galOverlay.classList.contains('open')) {
-    if (e.key === 'ArrowLeft') { if (galIdx > 0) renderGalleryPhoto(galIdx - 1); }
-    if (e.key === 'ArrowRight') {
-      const g = GALLERIES[galKey];
-      if (g && galIdx < g.photos.length - 1) renderGalleryPhoto(galIdx + 1);
-    }
-    if (e.key === 'Escape') closeGallery();
-    return;
-  }
   if (e.key === 'Escape') closeModal();
 });

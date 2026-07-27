@@ -29,9 +29,6 @@
         <a class="nav-tab" data-section="clubs" href="#clubs">
           <span class="nav-emoji">💚</span><span class="nav-label">Clubs</span>
         </a>
-        <a class="nav-tab" data-section="hobbies" href="#hobbies">
-          <span class="nav-emoji">🍵</span><span class="nav-label">Hobbies</span>
-        </a>
       </div>
     </nav>
 
@@ -170,6 +167,26 @@
       <div class="section-wrap">
         <h2 class="section-title proj-title">Projects & Research 🔬</h2>
         <div class="card-grid">
+
+          <!-- WCCCE 2026 -->
+          <div class="exp-card proj-card" data-card="wccce2026">
+            <div class="award-badge">🏆 Best Short Paper Award</div>
+            <img class="card-img" src="photos/wccce2026.jpeg" alt="WCCCE 2026">
+            <div class="card-body">
+              <div class="card-company">WCCCE 2026</div>
+              <div class="card-role">Build Your Own Feature: A GenAI Assignment for Data Structures</div>
+              <div class="card-date">April 2026</div>
+              <p class="card-desc">Co-authored (2nd author) a paper on an open-ended GenAI assignment model for Data Structures & Algorithms courses, awarded Best Short Paper at the Western Canada Conference on Computing Education.</p>
+              <div class="card-chips">
+                <span class="card-chip">Research</span><span class="card-chip">GenAI</span><span class="card-chip">Computing Education</span>
+              </div>
+              <span class="card-tag">Published Paper</span>
+            </div>
+            <div class="card-expand-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              click to expand
+            </div>
+          </div>
 
           <!-- NEUROPHYS.ai -->
           <div class="exp-card proj-card" data-card="neurophys">
@@ -351,71 +368,7 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         HOBBIES & INTERESTS
-    ══════════════════════════════════════════ -->
-    <section id="hobbies">
-      <div class="section-wrap">
-        <h2 class="section-title hobby-title">Life Outside Code 🍵</h2>
-
-        <!-- photo gallery tiles -->
-        <div class="hobby-tiles">
-
-          <div class="hobby-tile" data-gallery="matcha">
-            <div class="hobby-tile-placeholder">
-              <span class="hobby-emoji">🍵</span>
-              <span>📸 add photos</span>
-            </div>
-            <div class="hobby-tile-label">matcha everything</div>
-            <div class="hobby-tile-hint">tap to see photos</div>
-          </div>
-
-          <div class="hobby-tile" data-gallery="coffee">
-            <div class="hobby-tile-placeholder">
-              <span class="hobby-emoji">☕</span>
-              <span>📸 add photos</span>
-            </div>
-            <div class="hobby-tile-label">coffee shop hopping</div>
-            <div class="hobby-tile-hint">tap to see photos</div>
-          </div>
-
-          <div class="hobby-tile" data-gallery="hiking">
-            <div class="hobby-tile-placeholder">
-              <span class="hobby-emoji">🥾</span>
-              <span>📸 add photos</span>
-            </div>
-            <div class="hobby-tile-label">hiking the PNW</div>
-            <div class="hobby-tile-hint">tap to see photos</div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-    <!-- ✅ FIXED: </section> was missing — footer was incorrectly inside the hobbies section -->
-
     <footer>made with 💙 by Ioli · Seattle, WA</footer>
-
-    <!-- ══════════════════════════════════════════
-         GALLERY LIGHTBOX
-    ══════════════════════════════════════════ -->
-    <div class="gallery-overlay" id="gallery-overlay" role="dialog" aria-modal="true" aria-label="Photo gallery">
-      <button class="gallery-close" id="gallery-close" aria-label="Close gallery">✕</button>
-      <div class="gallery-stage">
-        <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <div class="gallery-img-wrap" id="gallery-img-wrap"></div>
-        <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Next photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-      <div class="gallery-meta">
-        <div class="gallery-title" id="gallery-title"></div>
-        <div class="gallery-counter" id="gallery-counter"></div>
-      </div>
-      <div class="gallery-thumbs" id="gallery-thumbs"></div>
-    </div>
 
     <!-- ══════════════════════════════════════════
          CARD MODAL
