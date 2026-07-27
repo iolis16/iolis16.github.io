@@ -146,8 +146,11 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   align-items: center; gap: 6px;
   color: var(--slate); font-size: 0.9em; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
   animation: bobble 2s ease-in-out infinite;
+  transition: opacity 0.2s, color 0.2s;
 }
+.scroll-cue:hover { opacity: 0.7; color: var(--navy); }
 .scroll-cue svg { width: 22px; opacity: 0.7; }
 @keyframes bobble { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
@@ -217,7 +220,6 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   color: var(--slate); font-size: 0.85em; font-weight: 600; letter-spacing: 0.05em;
 }
 .proj-card .card-img-placeholder { background: linear-gradient(135deg,#ddc5cc,#eedde3); color:var(--proj); }
-.club-card .card-img-placeholder { background: linear-gradient(135deg,#b8d8cb,#d8ede7); color:var(--club); }
 .card-img-placeholder svg { width: 36px; opacity: 0.5; }
 
 /* award/badge */
@@ -337,7 +339,6 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   color: var(--slate); font-size: 0.9em; font-weight: 600;
 }
 .proj-modal .modal-img-placeholder { background: linear-gradient(135deg,#ddc5cc,#eedde3); color:var(--proj); }
-.club-modal .modal-img-placeholder { background: linear-gradient(135deg,#b8d8cb,#d8ede7); color:var(--club); }
 .modal-img-placeholder svg { width: 44px; opacity: 0.45; }
 
 .modal-content { padding: 28px 34px 36px; }
