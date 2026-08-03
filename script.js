@@ -66,7 +66,7 @@ const CARDS = {
     role: 'Build Your Own Feature: A GenAI Assignment for Data Structures',
     date: 'April 2026',
     tag: 'Published Paper',
-    award: '🏆 Best Short Paper Award',
+    award: '[ Best Short Paper Award ]',
     img: 'photos/wccce2026.jpeg',
     bullets: [
       'Co-authored (2nd author) a short experience-report paper on "Build Your Own Feature," an open-ended GenAI assignment model for Data Structures & Algorithms courses.',
@@ -82,7 +82,7 @@ const CARDS = {
     role: 'Mobile Physical Therapy Platform',
     date: 'June 2024 – Present',
     tag: 'HealthTech',
-    award: '🏆 Hollomon Health Innovation Challenge Winner',
+    award: '[ Hollomon Health Innovation Challenge Winner ]',
     img: 'photos/neurophys.jpeg',
     bullets: [
       'Developed a full-stack platform for a mobile physical therapy app, supporting patients on both Android and iOS.',
@@ -97,7 +97,7 @@ const CARDS = {
     role: 'Integrating AI Into Assignment Design',
     date: 'January 2024 – Present',
     tag: 'Academic Research',
-    award: '🎓 Poster Presentation · UW Allen School',
+    award: '[ Poster Presentation · UW Allen School ]',
     img: 'photos/researchposter.jpeg',
     bullets: [
       'Ongoing research project examining how AI tools influence the design of assignments in college-level computer science courses.',
@@ -200,7 +200,7 @@ const CARDS = {
 /* ══════════════════════════════════════════════════════════════
    TYPED HERO TEXT
 ══════════════════════════════════════════════════════════════ */
-const heroText = "Hi there, I'm Ioli! 👋";
+const heroText = "Hi there, I'm Ioli!";
 const typedEl  = document.getElementById('typed-text');
 let charIdx = 0;
 
@@ -223,6 +223,47 @@ for (let i = 0; i < 24; i++) {
   b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-delay:${Math.random()*6}s;animation-duration:${Math.random()*5+7}s`;
   bubbleContainer.appendChild(b);
 }
+
+/* ══════════════════════════════════════════════════════════════
+   CUSTOM CURSOR
+══════════════════════════════════════════════════════════════ */
+(function () {
+  const cursor = document.getElementById('custom-cursor');
+  if (!cursor || window.matchMedia('(hover: none)').matches) return;
+
+  window.addEventListener('mousemove', e => {
+    cursor.style.transform = `translate(${e.clientX - 1}px, ${e.clientY - 2}px)`;
+  });
+
+  const HOVER_SELECTOR = 'a, button, .nav-tab, .exp-card, .scroll-cue';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(HOVER_SELECTOR)) cursor.classList.add('hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(HOVER_SELECTOR)) cursor.classList.remove('hover');
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   TERMINAL-STYLE CARD TITLEBARS
+══════════════════════════════════════════════════════════════ */
+const CARD_FOLDER = { exp: 'experience', proj: 'projects', club: 'clubs' };
+document.querySelectorAll('.exp-card[data-card]').forEach(card => {
+  const key = card.dataset.card;
+  const data = CARDS[key];
+  if (!data) return;
+
+  const folder = CARD_FOLDER[data.type] || data.type;
+  const bar = document.createElement('div');
+  bar.className = 'card-titlebar';
+  bar.innerHTML = `
+    <span class="card-dot red"></span>
+    <span class="card-dot yellow"></span>
+    <span class="card-dot green"></span>
+    <span class="card-titlebar-label">~/${folder}/${key}</span>
+  `;
+  card.insertBefore(bar, card.firstChild);
+});
 
 /* ══════════════════════════════════════════════════════════════
    SCROLL FADE-IN — CARDS
@@ -276,6 +317,9 @@ function openModal(key) {
   const isClub = d.type === 'club';
   modalEl.className = isProj ? 'modal proj-modal' : isClub ? 'modal club-modal' : 'modal';
 
+  const folder = CARD_FOLDER[d.type] || d.type;
+  document.getElementById('modal-titlebar-label').textContent = `~/${folder}/${key}`;
+
   // image
   const imgArea = document.getElementById('modal-img-area');
   if (d.img && d.img.trim() !== '') {
@@ -285,7 +329,7 @@ function openModal(key) {
     im.style.opacity = '0';
     im.style.transition = 'opacity 0.3s ease';
     im.onload  = () => { im.style.opacity = '1'; };
-    im.onerror = () => { imgArea.innerHTML = `<div class="modal-img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg><span>image couldn't load 🙁</span></div>`; };
+    im.onerror = () => { imgArea.innerHTML = `<div class="modal-img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg><span>[ image failed to load ]</span></div>`; };
     im.src = d.img;
     imgArea.innerHTML = '';
     imgArea.appendChild(im);
@@ -294,7 +338,7 @@ function openModal(key) {
   } else {
     imgArea.innerHTML = `<div class="modal-img-placeholder">
          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
-         <span>📸 add your photo here</span>
+         <span>[ add photo ]</span>
        </div>`;
   }
 
@@ -313,7 +357,7 @@ function openModal(key) {
   const linkArea = document.getElementById('modal-link-area');
   linkArea.innerHTML = d.link
     ? `<a class="modal-link-btn" href="${d.link}" target="_blank" rel="noopener">
-         🔗 View Project
+         [ view project ]
        </a>`
     : '';
 

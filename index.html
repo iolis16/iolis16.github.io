@@ -7,27 +7,28 @@
     <title>Ioli Shrivastava</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
     <div class="bubble-background"></div>
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
 
     <!-- ── NAV ── -->
     <nav class="site-nav" aria-label="Section navigation">
       <div class="nav-pill">
         <a class="nav-tab active" data-section="hero" href="#hero">
-          <span class="nav-emoji">👋</span><span class="nav-label">Home</span>
+          <span class="nav-dot"></span><span class="nav-label">home</span>
         </a>
         <a class="nav-tab" data-section="experience" href="#experience">
-          <span class="nav-emoji">✨</span><span class="nav-label">Experience</span>
+          <span class="nav-dot"></span><span class="nav-label">experience</span>
         </a>
         <a class="nav-tab" data-section="projects" href="#projects">
-          <span class="nav-emoji">🔬</span><span class="nav-label">Projects</span>
+          <span class="nav-dot"></span><span class="nav-label">projects</span>
         </a>
         <a class="nav-tab" data-section="clubs" href="#clubs">
-          <span class="nav-emoji">💚</span><span class="nav-label">Clubs</span>
+          <span class="nav-dot"></span><span class="nav-label">clubs</span>
         </a>
       </div>
     </nav>
@@ -37,9 +38,8 @@
     ══════════════════════════════════════════ -->
     <section class="hero" id="hero">
       <h1 id="typed-text"></h1>
-      <p>🎓 Student at the University of Washington, majoring in Computer Science with a minor in Business Administration and concentration in Data Science.</p>
-      <p>💻 Experienced in web & app development — always excited to learn something new!</p>
-      <a href="mailto:iolis@cs.washington.edu">📬 iolis@cs.washington.edu</a>
+      <p>Student at the University of Washington, majoring in Computer Science with a minor in Business Administration and concentration in Data Science.</p>
+      <a href="mailto:iolis@cs.washington.edu">iolis@cs.washington.edu</a>
       <div class="skills-block">
         <span>Languages: Python, Java, JavaScript, HTML, CSS, TypeScript, SQL, C</span>
         <span>Technologies: Figma, GitHub, AWS, Firebase, Node.js, NestJS, Agile</span>
@@ -65,7 +65,7 @@
     ══════════════════════════════════════════ -->
     <section id="experience">
       <div class="section-wrap">
-        <h2 class="section-title">Where I've worked ✨</h2>
+        <h2 class="section-title">// where i've worked</h2>
         <div class="card-grid">
 
           <!-- Oracle -->
@@ -172,12 +172,12 @@
     ══════════════════════════════════════════ -->
     <section id="projects">
       <div class="section-wrap">
-        <h2 class="section-title proj-title">Projects & Research 🔬</h2>
+        <h2 class="section-title proj-title">// projects & research</h2>
         <div class="card-grid">
 
           <!-- WCCCE 2026 -->
           <div class="exp-card proj-card" data-card="wccce2026">
-            <div class="award-badge">🏆 Best Short Paper Award</div>
+            <div class="award-badge">[ Best Short Paper Award ]</div>
             <img class="card-img" src="photos/wccce2026.jpeg" alt="WCCCE 2026">
             <div class="card-body">
               <div class="card-company">WCCCE 2026</div>
@@ -197,7 +197,7 @@
 
           <!-- NEUROPHYS.ai -->
           <div class="exp-card proj-card" data-card="neurophys">
-            <div class="award-badge">🏆 Best Idea in Digital Health Award</div>
+            <div class="award-badge">[ Best Idea in Digital Health Award ]</div>
             <img class="card-img" src="photos/neurophys.jpeg" alt="Neurophys">
             <div class="card-body">
               <div class="card-company">NEUROPHYS.ai</div>
@@ -217,7 +217,7 @@
 
           <!-- Allen School Research Symposium -->
           <div class="exp-card proj-card" data-card="allenresearch">
-            <div class="award-badge">🎓 Poster Presentation</div>
+            <div class="award-badge">[ Poster Presentation ]</div>
             <img class="card-img" src="photos/researchposter.jpeg" alt="Research Poster">
             <div class="card-body">
               <div class="card-company">Allen School Research Symposium</div>
@@ -308,12 +308,12 @@
     ══════════════════════════════════════════ -->
     <section id="clubs">
       <div class="section-wrap">
-        <h2 class="section-title club-title">Clubs & Leadership 💚</h2>
+        <h2 class="section-title club-title">// clubs & leadership</h2>
         <div class="card-grid">
 
           <!-- Kathakaars -->
           <div class="exp-card club-card" data-card="kathakaars">
-            <div class="award-badge" style="background: linear-gradient(135deg,#a8d8c0,#6fbfa0); color:#1a4a35; box-shadow: 0 2px 8px rgba(95,143,122,0.30);">👑 President</div>
+            <div class="award-badge" style="background: linear-gradient(135deg,#a8d8c0,#6fbfa0); color:#1a4a35; box-shadow: 0 2px 8px rgba(95,143,122,0.30);">[ President ]</div>
             <div class="card-body">
               <div class="card-company">Kathakaars</div>
               <div class="card-role">President</div>
@@ -377,7 +377,7 @@
       </div>
     </section>
 
-    <footer>made with 💙 by Ioli · Seattle, WA</footer>
+    <footer>// made by ioli · seattle, wa</footer>
 
     <!-- ══════════════════════════════════════════
          CARD MODAL
@@ -387,7 +387,13 @@
         <div class="modal-deco" style="width:80px;height:80px;top:-24px;right:50px;"></div>
         <div class="modal-deco" style="width:44px;height:44px;bottom:80px;left:-16px;"></div>
         <div class="modal-deco" style="width:28px;height:28px;top:220px;right:-10px;"></div>
-        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+        <div class="modal-titlebar">
+          <span class="card-dot red"></span>
+          <span class="card-dot yellow"></span>
+          <span class="card-dot green"></span>
+          <span class="card-titlebar-label" id="modal-titlebar-label"></span>
+          <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+        </div>
         <div id="modal-img-area"></div>
         <div class="modal-content">
           <div id="modal-award-area"></div>
