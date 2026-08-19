@@ -60,6 +60,37 @@ const CARDS = {
   },
 
   /* ── PROJECTS ── */
+  nazar: {
+    type: 'proj',
+    company: 'Nazar',
+    role: 'Offline AI Diagnostics for Air-Gapped Systems',
+    date: 'July 2026',
+    tag: 'Hackathon',
+    award: '[ 2nd Place, Dell x NVIDIA Hackathon ]',
+    img: 'photos/nazar.png',
+    bullets: [
+      'Built an offline diagnostic tool that ingests machine logs, configs, and docs, then reasons over them with a locally-hosted LLM — no cloud or internet required.',
+      'Implemented hybrid search (BM25 + graph traversal over a networkx map) to connect failure symptoms to root causes across machines.',
+      'Placed 2nd out of 40 teams at the Dell x NVIDIA Hackathon (Local AI on Dell Pro Max with GB10) in Seattle.',
+    ],
+    link: 'https://github.com/Dhruv-0-Arora/Nazar',
+    skills: ['Python', 'FastAPI', 'Ollama', 'React', 'Graph Search', 'Offline AI'],
+  },
+  altigoz: {
+    type: 'proj',
+    company: 'AltiGoz',
+    role: "Live Pedestrian-Safety Routing on Seattle's Traffic Cameras",
+    date: 'August 2026',
+    tag: 'Hackathon',
+    img: 'photos/altigoz.png',
+    bullets: [
+      'Built the mobile-first map frontend (MapLibre) showing shortest vs. safer walking routes with evidence-backed safety assessments on tap.',
+      'Implemented the routing and camera-convergence harness — risk-weighted A* pathfinding and street-to-camera matching across 472 traffic cameras.',
+      'Competed at NVIDIA Spark Hack Seattle (See track), running inference locally on an NVIDIA DGX Spark (GB10).',
+    ],
+    link: 'https://github.com/BerkM125/AltiGoz',
+    skills: ['MapLibre', 'Python', 'Pathfinding', 'Geospatial Data', 'NVIDIA Spark'],
+  },
   wccce2026: {
     type: 'proj',
     company: 'WCCCE 2026',
@@ -223,26 +254,6 @@ for (let i = 0; i < 24; i++) {
   b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-delay:${Math.random()*6}s;animation-duration:${Math.random()*5+7}s`;
   bubbleContainer.appendChild(b);
 }
-
-/* ══════════════════════════════════════════════════════════════
-   CUSTOM CURSOR
-══════════════════════════════════════════════════════════════ */
-(function () {
-  const cursor = document.getElementById('custom-cursor');
-  if (!cursor || window.matchMedia('(hover: none)').matches) return;
-
-  window.addEventListener('mousemove', e => {
-    cursor.style.transform = `translate(${e.clientX - 1}px, ${e.clientY - 2}px)`;
-  });
-
-  const HOVER_SELECTOR = 'a, button, .nav-tab, .exp-card, .scroll-cue';
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest(HOVER_SELECTOR)) cursor.classList.add('hover');
-  });
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest(HOVER_SELECTOR)) cursor.classList.remove('hover');
-  });
-})();
 
 /* ══════════════════════════════════════════════════════════════
    TERMINAL-STYLE CARD TITLEBARS

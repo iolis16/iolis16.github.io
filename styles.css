@@ -50,29 +50,13 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   CUSTOM CURSOR
-   ✅ intentional global override — this site
-   replaces the native pointer everywhere, so
-   !important is warranted here (not a hack).
+   PIXEL CURSOR
 ══════════════════════════════════════════ */
-html, body, a, button { cursor: none !important; }
-
-.custom-cursor {
-  position: fixed; top: 0; left: 0; z-index: 2000;
-  width: 2px; height: 20px;
-  background: var(--navy);
-  pointer-events: none;
-  transform: translate(-100px, -100px);
-  animation: blink 1s infinite;
-  will-change: transform;
+body {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2227%22%20height%3D%2248%22%20viewBox%3D%220%200%209%2016%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%221%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%223%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%224%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%226%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2210%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%2211%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2215%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23263a69%22%2F%3E%3C%2Fsvg%3E") 1 1, auto;
 }
-.custom-cursor.hover {
-  width: 16px; height: 20px;
-  background: var(--link);
-}
-@media (hover: none) {
-  .custom-cursor { display: none; }
-  html, body, a, button { cursor: auto !important; }
+a, button, .nav-tab, .exp-card, .scroll-cue {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2227%22%20height%3D%2248%22%20viewBox%3D%220%200%209%2016%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%221%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%223%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%224%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%226%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2210%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%2211%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%2215%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23008cba%22%2F%3E%3C%2Fsvg%3E") 1 1, pointer;
 }
 
 /* ══════════════════════════════════════════
@@ -107,7 +91,7 @@ html, body, a, button { cursor: none !important; }
   font-family: 'JetBrains Mono', monospace; /* ✅ FIXED: fallback */
   font-size: 0.82em; font-weight: 700;
   color: var(--navy); opacity: 0.55;
-  cursor: pointer; border: none; background: none;
+  border: none; background: none;
   text-decoration: none;
   transition: opacity 0.2s, background 0.2s, color 0.2s, transform 0.15s;
   white-space: nowrap; letter-spacing: 0.01em;
@@ -168,7 +152,7 @@ button {
   padding: 0.65em 1.5em; font-size: 1em; font-weight: 600;
   font-family: 'JetBrains Mono', monospace; /* ✅ FIXED: fallback */
   background-color: var(--slate);
-  cursor: pointer; transition: background 0.25s, transform 0.15s;
+  transition: background 0.25s, transform 0.15s;
 }
 button:hover { background-color: var(--navy); transform: translateY(-2px); }
 
@@ -177,7 +161,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   align-items: center; gap: 6px;
   color: var(--slate); font-size: 0.9em; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
-  text-decoration: none; cursor: pointer;
+  text-decoration: none;
   animation: bobble 2s ease-in-out infinite;
   transition: opacity 0.2s, color 0.2s;
 }
@@ -218,7 +202,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   border-radius: 10px; padding: 0 0 24px;
   width: 100%; max-width: 360px;
   box-shadow: 0 8px 36px rgba(38,58,105,0.10);
-  overflow: hidden; cursor: pointer; position: relative;
+  overflow: hidden; position: relative;
   /* ✅ FIXED: cards above the fold would stay invisible if JS observer missed them.
      Using will-change + a short transition lets .visible safely override opacity/transform. */
   opacity: 0; transform: translateY(40px) scale(0.97);
@@ -263,19 +247,6 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 .proj-card .card-titlebar-label { color: var(--proj); opacity: 0.85; }
 .club-card .card-titlebar-label { color: var(--club); opacity: 0.85; }
 
-/* card image */
-.card-img-wrap { line-height: 0; font-size: 0; }
-.card-img { width: 100%; height: 190px; object-fit: cover; display: block; vertical-align: top; }
-.card-img-placeholder {
-  width: 100%; height: 190px;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 8px;
-  background: linear-gradient(135deg, #c5c9e2 0%, #dde0f0 100%);
-  color: var(--slate); font-size: 0.85em; font-weight: 600; letter-spacing: 0.05em;
-}
-.proj-card .card-img-placeholder { background: linear-gradient(135deg,#ddc5cc,#eedde3); color:var(--proj); }
-.card-img-placeholder svg { width: 36px; opacity: 0.5; }
-
 /* award/badge */
 .award-badge {
   position: absolute; top: 44px; right: 14px;
@@ -288,6 +259,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
 
 /* card body */
 .card-body { padding: 20px 24px 0; text-align: left; }
+.award-badge + .card-body { padding-top: 40px; }
 .card-company { font-size: 1.12em; font-weight: 800; color: var(--navy); }
 .proj-card .card-company { color: var(--proj); }
 .club-card .card-company { color: var(--club); }
@@ -388,7 +360,7 @@ button:hover { background-color: var(--navy); transform: translateY(-2px); }
   margin-left: auto; flex-shrink: 0;
   width: 26px; height: 26px; border-radius: 50%; border: none;
   background: rgba(131,141,177,0.18); color: var(--navy);
-  font-size: 0.85em; cursor: pointer;
+  font-size: 0.85em;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s, transform 0.2s; padding: 0;
 }
